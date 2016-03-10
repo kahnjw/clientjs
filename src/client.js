@@ -127,13 +127,11 @@
 //      client.getCanvasPrint();
 
 // Anonymous auto JavaScript function execution.
-(function(scope) {
+var initClientJs = (function(scope) {
   'use strict';
 
   var browserData; // Global user agent browser object.
   var fontDetective; // Global font detective object.
-
-  if (! scope) return;
 
   // ClientJS constructor which sets the browserData object and returs the client object.
   var ClientJS = function() {
@@ -689,4 +687,8 @@
     module.exports = ClientJS;
   }
   scope.ClientJS = ClientJS;
-})(typeof window === 'object' && window);
+});
+
+if (typeof window === 'object') {
+  initClientJs(window);
+}
