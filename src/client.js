@@ -138,6 +138,7 @@ var initClientJs = (function(scope) {
   // ClientJS constructor which sets the browserData object and returs the client object.
   var ClientJS = function() {
     var parser = new(window.UAParser || require('./vendor/ua-parser.js'));
+    var Detector = (window.Detector || require('./vendor/fontdetect.js'));
     browserData = parser.getResult();
     fontDetective = new Detector();
     return this;
