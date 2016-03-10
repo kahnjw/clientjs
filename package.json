@@ -37,7 +37,7 @@
     "posttest": "./node_modules/karma/bin/karma start karma/aircover.conf.js",
     "prepublish": "./node_modules/gulp/bin/gulp.js"
   },
-  "main": "dist/client.min.js",
+  "main": "src/client.js",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-closure-compiler": "^0.4.0",
