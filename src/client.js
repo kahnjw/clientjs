@@ -133,6 +133,8 @@ var initClientJs = (function(scope) {
   var browserData; // Global user agent browser object.
   var fontDetective; // Global font detective object.
 
+  if (! scope) return;
+
   // ClientJS constructor which sets the browserData object and returs the client object.
   var ClientJS = function() {
     var parser = new(window.UAParser || exports.UAParser);
@@ -683,12 +685,14 @@ var initClientJs = (function(scope) {
     }
   };
 
-  if (typeof module === 'object' && typeof exports !== "undefined") {
-    module.exports = ClientJS;
-  }
   scope.ClientJS = ClientJS;
+
+  return ClientJS;
 });
 
-if (typeof window === 'object') {
-  initClientJs(window);
+
+if (typeof module === 'object' && typeof exports !== "undefined") {
+  module.exports = initClientJs(typeof window === 'object' && window);
+} else if (typeof window === 'object') {
+  window.ClientJS = initClientJs(window);
 }
