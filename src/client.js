@@ -133,6 +133,8 @@
   var browserData; // Global user agent browser object.
   var fontDetective; // Global font detective object.
 
+  if (! scope) return;
+
   // ClientJS constructor which sets the browserData object and returs the client object.
   var ClientJS = function() {
     var parser = new(window.UAParser || exports.UAParser);
@@ -687,4 +689,4 @@
     module.exports = ClientJS;
   }
   scope.ClientJS = ClientJS;
-})(window);
+})(typeof window === 'object' && window);
