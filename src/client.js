@@ -135,6 +135,12 @@ var initClientJs = (function(scope) {
 
   if (! scope) return;
 
+  var getMurmHash = function() {
+    return window.murmurhash3_32_gc || require('./vendor/murmurhash3.js');
+  };
+
+  var murmurhash3_32_gc = getMurmHash();
+
   // ClientJS constructor which sets the browserData object and returs the client object.
   var ClientJS = function() {
     var parser = new(window.UAParser || require('./vendor/ua-parser.js'));

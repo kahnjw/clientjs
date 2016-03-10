@@ -65,3 +65,5 @@ var Detector = function() {
 
     this.detect = detect;
 };
+
+module.exports = Detector;

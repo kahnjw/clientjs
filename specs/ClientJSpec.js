@@ -1,3 +1,5 @@
+var ClientJS = require('../src/client');
+
 describe("ClientJS", function(){
   var client;
   beforeEach(function(){
@@ -22,7 +24,7 @@ describe("ClientJS", function(){
 
     describe("#getBrowserData", function(){
       it("should return a UAParser result", function(){
-        var parser = (new (window.UAParser||exports.UAParser));
+        var parser = new (require('../src/vendor/ua-parser.js'))();
         expect(browserData).toEqual(parser.getResult())
       });
 
