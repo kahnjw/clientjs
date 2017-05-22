@@ -698,8 +698,4 @@ var initClientJs = (function(scope) {
 });
 
 
-if (typeof module === 'object' && typeof exports !== "undefined") {
-  module.exports = initClientJs(typeof window === 'object' && window);
-} else if (typeof window === 'object') {
-  window.ClientJS = initClientJs(window);
-}
+export default initClientJs;
