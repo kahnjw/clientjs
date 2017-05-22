@@ -698,4 +698,4 @@ var initClientJs = (function(scope) {
 });
 
 
-export default initClientJs;
+module.exports = initClientJs;
